@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addShop } from '../actions';
 import { deleteShop } from '../actions';
 
-class Menu extends Component {
+class AddMenu extends Component {
 
     handleSubmit(event) {
         let name = this.refs.name;
@@ -82,4 +82,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(Menu);
+export default connect(null, mapDispatchToProps)(AddMenu);
