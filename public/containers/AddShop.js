@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { addShop } from '../actions';
 import { deleteShop } from '../actions';
-
+import {Link} from 'react-router';
 class AddShop extends Component {
 
     handleSubmit(event) {
@@ -23,7 +23,7 @@ class AddShop extends Component {
             return
         }
 
-        this.props.addShop("Store Name:"+name.value+"   "+"Location:"+location.value+"   "+"Contact Numbers:"+contacts.value);
+        this.props.addShop("Store Name:"+name.value+"   "+"   "+"Location:"+location.value+"   "+"   "+"Contact Numbers:"+contacts.value);
         name.value= ''
         location.value=''
         contacts.value=''
@@ -33,37 +33,42 @@ class AddShop extends Component {
 
     render() {
         return (
-            <div>
+            <div className="admin">
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                <h3>Add Store</h3>
+                <h1 className="addheader">Add Store</h1>
+                <br/>
+                
                 <label>
-                Store Name:
-                    <input type="text" ref="name"/>
+                Store Name
+                <br/>
+                    <input type="text" ref="name" placeholder="enter store name"/>
                 </label>
 
                 <br/>
                 <br/>
 
                 <label>
-                Location:
-                    <input ref="location"/>
+                Location
+                <br/>
+                    <input ref="location" placeholder="enter store location"/>
                 </label>
 
                   <br/>
                   <br/>
                  <label>
-                Contact Numbers:
-                    <input type="number" ref="contacts"/>
+                Contact Numbers
+                <br/>
+                    <input type="number" ref="contacts" placeholder="enter contact numbers"/>
               
                 </label>
                   <br/>
                   <br/>
 
-
+                  <Link to="/admin-dash">
                     <button type="submit">
                         Add Store
                     </button>
-
+                </Link>
                 </form>
             </div>
         );

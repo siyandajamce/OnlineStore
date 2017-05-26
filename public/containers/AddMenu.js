@@ -33,20 +33,22 @@ class AddMenu extends Component {
 
     render() {
         return (
-            <div>
+            <div className="menu">
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                <h3>Add Store</h3>
+                <h3 className="menuHeader">Add Store</h3>
                 <label>
-                Food Name:
-                    <input type="text" ref="name"/>
+                Food Name
+                <br/>
+                    <input type="text" ref="name" placeholder="enter name of the food"/>
                 </label>
 
                 <br/>
                 <br/>
 
                  <label>
-                Price:
-                    <input type="number" ref="contacts"/>
+                Price
+                <br/>
+                    <input type="number" ref="contacts" placeholder="enter the price of the food"/>
               
                 </label>
 
@@ -54,8 +56,9 @@ class AddMenu extends Component {
                   <br/>
 
                 <label>
-                Description:
-                    <textarea ref="location"/>
+                Description
+                <br/>
+                    <textarea ref="location" placeholder="enter food description"/>
                 </label>
 
                   
