@@ -5,6 +5,7 @@ import { deleteShop } from '../actions';
 import {Link} from 'react-router'
 
 
+
 class SignInForm extends Component {
 
 
@@ -15,7 +16,7 @@ class SignInForm extends Component {
                 <form >
                 <h3 className="signIn">Sign In Page</h3>
                 <br/>
-                
+
                 <label>
                 Username
                 <br/>

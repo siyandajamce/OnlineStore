@@ -6,7 +6,6 @@ import App from '../components/App';
 import Edit from '../containers/Edit';
 import AddMenu from '../containers/AddMenu';
 import SignInForm from './SignInForm';
-import AdminDash from '../components/AdminDash';
 
 
 const Root = ({ store }) => (
@@ -16,7 +15,6 @@ const Root = ({ store }) => (
        <Route path="/main" component={App} />
       <Route path="/shops/:id/edit" component={Edit}/>
       <Route path="/menu" component={AddMenu}/>
-      <Route path="/admin-dash" component={AdminDash}/>
 
     </Router>
   </Provider>

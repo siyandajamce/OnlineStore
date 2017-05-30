@@ -4,8 +4,11 @@ import VisibleShopList from '../containers/VisibleShopList'
 
 const App = () => (
   <div>
+
+
     <AddShop/>
     <VisibleShopList/>
+    
   </div>
 );
 

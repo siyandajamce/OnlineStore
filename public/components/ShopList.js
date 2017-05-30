@@ -1,9 +1,7 @@
 import React, { PropTypes } from 'react';
 import Shop from './Shop';
-import AdminDash from './AdminDash';
 
 const ShopList = ({ shops, onShopClick, onDeleteClick }) => (
-  <AdminDash>
   <div>
     {shops.map(shop =>
       <Shop
@@ -16,7 +14,6 @@ const ShopList = ({ shops, onShopClick, onDeleteClick }) => (
       />
     )}
   </div>
-  </AdminDash>
 );
 
 ShopList.propTypes = {

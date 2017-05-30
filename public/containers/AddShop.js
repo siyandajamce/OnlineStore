@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { addShop } from '../actions';
 import { deleteShop } from '../actions';
-import {Link} from 'react-router';
+
+
 class AddShop extends Component {
 
     handleSubmit(event) {
@@ -63,12 +64,10 @@ class AddShop extends Component {
                 </label>
                   <br/>
                   <br/>
-
-                  <Link to="/admin-dash">
                     <button type="submit">
                         Add Store
                     </button>
-                </Link>
+                    
                 </form>
             </div>
         );
