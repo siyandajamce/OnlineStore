@@ -1,31 +1,51 @@
 let nextShopId = 0
-export const addShop = (text) => {
+let nextShopMenu=0
+
+export const addShop = (name,location,contactNumber) => {
   return {
     type: 'ADD_SHOP',
     id: nextShopId++,
-    text
+    name,
+    location,
+    contactNumber,
+
+   
   }
 }
 
-export const toggleShop = (id) => {
-  return {
-    type: 'TOGGLE_SHOP',
-    id
-  }
-}
 
-export const editShop = (id, text) => {
+export const editShop = (id, name,location,contactNumber) => {
   return {
     type: 'EDIT_SHOP',
     id,
-    text
+    name,
+    location,
+    contactNumber,
+
+    
   }
 }
 
-export const deleteShop = (id, text) => {
+export const deleteShop = (id, name,location,contactNumber) => {
   return {
     type: 'DELETE_SHOP',
     id,
-    text
+    name,
+    location,
+    contactNumber,
+
+    
+  }
+}
+
+export const addMenuItem=(shopId,name, description, price, category)=>{
+  return{
+    type: 'ADD_MENU_ITEM',
+    shopId,
+    name,
+    description,
+    price,
+    category
+
   }
 }

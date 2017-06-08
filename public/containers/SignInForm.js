@@ -34,7 +34,7 @@ class SignInForm extends Component {
                 </label>
                 <br/>
                   <br/>
-                  <Link to="main">
+                  <Link to="/add-shop">
                     <button type="submit"
 
                     >

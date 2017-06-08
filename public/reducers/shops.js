@@ -5,8 +5,13 @@ const shops = (state = [], action) => {
         ...state,
         {
           id: action.id,
-          text: action.text,
-          completed: false
+          name: action.name,
+          location: action.location,
+          contactNumber: action.contactNumber,
+          menu: {
+            items: []
+          }
+         
         }
       ]
 
@@ -16,15 +21,23 @@ const shops = (state = [], action) => {
       case 'EDIT_SHOP' : {
           return state.map(shop => {
             if (shop.id === action.id) {
-              shop = Object.assign({}, shop, {text : action.text})
+              shop = Object.assign({}, shop, {name : action.name},{location : action.location},{contactNumber : action.contactNumber}
+             )
+
               return shop;
             }
             return shop;
           });
       }
+
+      case 'ADD_MENU_ITEM':
+const shop = state.filter(shop=> shop.id == action.shopId)[0];
+shop.menu.items.push({id: shop.menu.items.length++, name: action.name, price: action.price,description: action.description, category: action.category})
+
       default : return state;
   }
 }
+
 
 
 

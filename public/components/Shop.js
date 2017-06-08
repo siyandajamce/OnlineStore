@@ -1,13 +1,23 @@
 import React, { PropTypes } from 'react';
 import {Link} from 'react-router'
-const Shop = ({ onClick, shop, onDeleteClick }) => (
+
+
+
+const Shop = ({ onClick, shop, onDeleteClick}) => (
   <div
     onClick={onClick}
     >
 
 
-    <div>{shop.text}</div>
-    <Link to="/menu">
+    <div>
+    Store Name:{shop.name}
+    <br/>
+    Location:{shop.location}
+    <br/>
+    Contact Number:{shop.contactNumber}
+
+    </div>
+    <Link to={"/shops/" + shop.id + "/menu"}>
       <button>Add Menu</button>
     </Link>
 
@@ -23,7 +33,6 @@ const Shop = ({ onClick, shop, onDeleteClick }) => (
 );
 
 Shop.propTypes = {
-  onClick: PropTypes.func.isRequired,
   shop: PropTypes.object.isRequired,
   onDeleteClick: PropTypes.func.isRequired
 }
