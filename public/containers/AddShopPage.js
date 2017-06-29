@@ -13,6 +13,7 @@ class AddShopPage extends Component {
 
 
     render() {
+        
         return (
             <div>
             <AddShop addShop={this.props.addShop}/>
@@ -31,8 +32,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        addShop:(name,location,contactNumber) => {
-            dispatch(addShop(name,location,contactNumber));
+        addShop:(name,image,location,contactNumber) => {
+            dispatch(addShop(name,image,location,contactNumber));
         },
         onDeleteClick: (id) => {
             dispatch(deleteShop(id))

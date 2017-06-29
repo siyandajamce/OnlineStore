@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { editShop } from '../actions';
-import {Link} from 'react-router';
 
 class Edit extends React.Component {
   constructor(props){
     super(props)
     this.state = { };
     this.state.shopName = props.shop.name;
+    this.state.shopImage = props.shop.image;
     this.state.shopLocation = props.shop.location;
     this.state.shopContactNumber = props.shop.contactNumber;
 
@@ -18,11 +18,15 @@ class Edit extends React.Component {
     return (
       <div>
       <h1>Store name</h1>
-        <h3>{this.props.params.id}</h3>
         <input type="text" value={this.state.shopName} onChange={(e)=>{this.setState({shopName: e.target.value})}}/>
+        <input type="text" value={this.state.shopImage} onChange={(e)=>{this.setState({shopImage: e.target.value})}}/>
         <input type="text" value={this.state.shopLocation} onChange={(e)=>{this.setState({shopLocation: e.target.value})}}/>
         <input type="text" value={this.state.shopContactNumber} onChange={(e)=>{this.setState({shopContactNumber: e.target.value})}}/>
-        <Link to="/main"><button type="submit" onClick={(e)=>{this.props.editShop(this.props.shop.id, this.state.shopName, this.state.shopLocation, this.state.shopContactNumber)}}>Update</button></Link>
+        <button type="submit" onClick={(e)=>{this.props.editShop(this.props.shop.id, this.state.shopName,this.state.shopImage, this.state.shopLocation, this.state.shopContactNumber)}}>Update</button>
+      
+      <div>
+      </div>
+
       </div>
     )
   }
@@ -41,8 +45,8 @@ const mapStateToProps = (state, ownProps) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    editShop: (id, name,location,contactNumber) => {
-      dispatch(editShop(id, name,location,contactNumber))
+    editShop: (id, name,image,location,contactNumber) => {
+      dispatch(editShop(id, name,image,location,contactNumber))
     }
   };
 }

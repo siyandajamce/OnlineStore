@@ -29,7 +29,7 @@ class SignInForm extends Component {
                  <label>
                 Password
                 <br/>
-                    <input placeholder="enter password"/>
+                    <input type="password" placeholder="enter password"/>
               
                 </label>
                 <br/>

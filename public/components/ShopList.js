@@ -12,6 +12,7 @@ const ShopList = ({ shops, onDeleteClick }) => (
 
 
       />
+
     )}
   </div>
 );
@@ -21,8 +22,9 @@ ShopList.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
-    contactNumber: PropTypes.string.isRequired
-        
+    contactNumber: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+
   }).isRequired).isRequired,
     onDeleteClick: PropTypes.func.isRequired,
 }

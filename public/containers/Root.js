@@ -4,6 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 
 import AddShopPage from '../containers/AddShopPage';
 import Edit from '../containers/Edit';
+import EditMenu from '../containers/EditMenu';
 import AddMenuPage from '../containers/AddMenuPage';
 import SignInForm from './SignInForm';
 
@@ -13,6 +14,7 @@ const Root = ({ store }) => (
       <Route path="/" component={SignInForm} />
       <Route path="/add-shop" component={AddShopPage} />
       <Route path="/shops/:id/edit" component={Edit}/>
+      <Route path="/items/:shopId/edit" component={EditMenu}/>
       <Route path="/shops/:id/menu" component={AddMenuPage}/>
     </Router>
   </Provider>

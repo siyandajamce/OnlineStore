@@ -3,24 +3,32 @@ import {Link} from 'react-router'
 
 
 
-const Menu = ({ onClick, shop}) => (
-  <div
+const Menu = ({ onClick, item, onDeleteClick}) => (
+  <div className="modal"
     onClick={onClick}
     >
 
     <div>
-    Name:{shop.name}
+    {item.itemName}
     <br/>
-    description:{shop.description}
+    <img src={item.itemImage} height="150" width="210"/>
     <br/>
-    Price:{shop.price}
+    Description:{item.description}
     <br/>
-    Category :{shop.category}
+    Price:{item.price}
+    <br/>
+    Category :{item.category}
 
     </div>
-    
 
-    
+       
+
+            <Link to={"/items/" + item.id + "/edit"}><button>Edit</button></Link>
+            
+            <button style={{color: "#7650"}}
+            onClick={()=>onDeleteClick(item.shopId)}
+            type="button">Delete</button>
+
     
 
     </div>
@@ -29,7 +37,9 @@ const Menu = ({ onClick, shop}) => (
 );
 
 Menu.propTypes = {
-  shop: PropTypes.object.isRequired,
+  item: PropTypes.object.isRequired,
+  onDeleteClick: PropTypes.func.isRequired
+
 }
 
 module.exports= Menu;

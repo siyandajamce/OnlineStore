@@ -6,8 +6,10 @@ class AddShop extends Component {
         super(props)
         this.state = {
             name: '',
+            image:'',
             location: '',
             contactNumber: '',
+
             
 
         };
@@ -16,8 +18,11 @@ class AddShop extends Component {
 
     render() {
         return (
-            <div className="admin">
-                
+            <div className="admin"
+
+
+
+            >
                 <h1 className="addheader">Add Store</h1>
                 <br/>
                 
@@ -29,11 +34,18 @@ class AddShop extends Component {
 
                 <br/>
                 <br/>
-
+                <label>
+                Logo              
+                  <br/>
+                    <input  type="text" value={this.state.image} onChange={(e)=>this.setState({image: e.target.value})} placeholder="url"/>
+              
+                </label>
+                <br/>
+                <br/>
                 <label>
                 Location
                 <br/>
-                    <input value={this.state.location} onChange={(e)=>this.setState({location: e.target.value})} placeholder="enter store location"/>
+                    <input type="text" value={this.state.location} onChange={(e)=>this.setState({location: e.target.value})} placeholder="enter store location"/>
                 </label>
 
                   <br/>
@@ -44,13 +56,13 @@ class AddShop extends Component {
                     <input type="number" value={this.state.contactNumber} onChange={(e)=>this.setState({contactNumber: e.target.value})} placeholder="enter contact numbers"/>
               
                 </label>
+                 
                   <br/>
                   <br/>
-                    <button type="submit" onClick={(e)=>this.props.addShop(this.state.name,this.state.location,this.state.contactNumber)}>
+                    <button type="submit" onClick={(e)=>this.props.addShop(this.state.name,this.state.image,this.state.location,this.state.contactNumber)}>
                         Add Store
                     </button>
                     
-                
             </div>
         );
     }

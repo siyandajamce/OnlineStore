@@ -2,12 +2,13 @@ import React, { PropTypes } from 'react';
 import Menu from './Menu';
 
 
-const MenuList = ({ items }) => (
+const MenuList = ({ shop, onDeleteClick}) => (
   <div>
-    {items.map(shop =>
+    {shop.menu.items.map(item=>
       <Menu
-        key={shop.id}
-        shop={shop}
+        key={item.id}
+        item={item}
+        onDeleteClick={onDeleteClick}
 
 
       />
@@ -15,14 +16,17 @@ const MenuList = ({ items }) => (
   </div>
 );
 MenuList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-  	id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
+  shop: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    itemName: PropTypes.string.isRequired,
+    itemImage:PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired
         
-   }).isRequired)
+   }).isRequired,
+    onDeleteClick: PropTypes.func.isRequired,
 }
+
 
 export default MenuList;

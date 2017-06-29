@@ -4,18 +4,21 @@ import {Link} from 'react-router'
 
 
 const Shop = ({ onClick, shop, onDeleteClick}) => (
-  <div
+    
+  <div className="modal"
     onClick={onClick}
     >
 
 
     <div>
-    Store Name:{shop.name}
+    {shop.name}
+    <br/>
+    <img src={shop.image} height="150" width="210"/>
     <br/>
     Location:{shop.location}
     <br/>
     Contact Number:{shop.contactNumber}
-
+    <br/>
     </div>
     <Link to={"/shops/" + shop.id + "/menu"}>
       <button>Add Menu</button>
